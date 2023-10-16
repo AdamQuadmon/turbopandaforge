@@ -1,0 +1,24 @@
+{
+  "name": "@mugen/turbopandaforge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A digital gardens starter monorepo for handling MDX content with a SQLite database using PandaCSS for styling components.",
+  "author": "MugenCraft",
+  "license": "MIT",
+  "packageManager": "pnpm@8.6.7",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "dev": "turbo run dev",
+    "clean": "turbo run clean",
+    "prepare": "turbo run prepare"
+  },
+  "devDependencies": {
+    "next": "^13.0.0",
+    "turbo": "^1.10.15"
+  }
+}
