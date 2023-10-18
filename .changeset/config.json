@@ -1,0 +1,16 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
+  "changelog": [
+    "@changesets/changelog-github",
+    {
+      "repo": "mugencraft/turbopandaforge",
+      "labels": true
+    }
+  ],
+  "baseBranch": "main",
+  "commit": true,
+  "linked": [],
+  "access": "public",
+  "updateInternalDependencies": "patch",
+  "ignore": []
+}

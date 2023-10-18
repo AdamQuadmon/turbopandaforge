@@ -1,12 +1,14 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "globalEnv": [],
-  "globalPassThroughEnv": [],
+  "globalEnv": ["NODE_ENV", "VERCEL_ENV"],
+  "globalDotEnv": [".env.local", ".env"],
+  "globalPassThroughEnv": ["VERCEL_URL", "VERCEL_TOKEN"],
   "pipeline": {
     "build": {
       "dependsOn": [],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
+      "dotEnv": [".env.production.local", ".env.production"]
     },
     "test": {
       "outputs": ["coverage/**"],
@@ -14,12 +16,26 @@
     },
     "lint": {
       "dependsOn": [],
-      "outputs": ["lint-reports/**"]
+      "outputs": ["lint-reports/**"],
+      "dotEnv": [".env.lint.local", ".env.lint"]
+    },
+    "format": {
+      "dependsOn": ["lint"]
+    },
+    "format:write": {
+      "dependsOn": ["format"]
+    },
+    "pre-commit": {
+      "dependsOn": []
+    },
+    "pre-push": {
+      "dependsOn": []
     },
     "dev": {
       "cache": false,
       "persistent": true,
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "dotEnv": [".env.development.local", ".env.development"]
     },
     "clean": {
       "cache": false

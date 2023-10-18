@@ -2,23 +2,50 @@
   "name": "@mugen/turbopandaforge",
   "version": "1.0.0",
   "private": true,
-  "description": "A digital gardens starter monorepo for handling MDX content with a SQLite database using PandaCSS for styling components.",
-  "author": "MugenCraft",
+  "description": "A digital gardens starter monorepo to forge packages and apps.",
+  "author": {
+    "name": "Luciano Amodio (@ MugenCraft)"
+  },
   "license": "MIT",
   "packageManager": "pnpm@8.6.7",
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "build": "turbo run build",
-    "test": "turbo run test",
-    "lint": "turbo run lint",
-    "dev": "turbo run dev",
-    "clean": "turbo run clean",
-    "prepare": "turbo run prepare"
+    "preinstall": "npx only-allow pnpm",
+    "reinstall": "pnpm clean && pnpm install",
+    "dev": "turbo dev --no-cache --continue",
+    "build": "turbo build",
+    "clean": "turbo clean",
+    "lint:root": "eslint .",
+    "format:root": "prettier --ignore-path .prettierignore --ignore-unknown --check .",
+    "format:root:write": "prettier --ignore-path .prettierignore --ignore-unknown --write .",
+    "lint": "pnpm lint:root && turbo lint",
+    "format": "pnpm format:root && turbo format",
+    "format:write": "pnpm format:root:write && turbo format:write",
+    "test:root": "jest",
+    "test": "pnpm test:root && turbo test",
+    "check:dedupe": "pnpm dedupe --check",
+    "pre-commit": "turbo pre-commit",
+    "pre-push": "turbo pre-push",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo build && changeset publish"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && pnpm pre-commit && pnpm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "pnpm check:dedupe && pnpm pre-push"
+    }
   },
   "devDependencies": {
-    "next": "^13.0.0",
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.2",
+    "@commitlint/cli": "^17.8.0",
+    "@commitlint/config-conventional": "^17.8.0",
+    "dotenv-cli": "^7.3.0",
+    "eslint": "^8.51.0",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
     "turbo": "^1.10.15"
   }
 }

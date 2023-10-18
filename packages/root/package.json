@@ -1,0 +1,10 @@
+{
+  "name": "@turbopandaforge/root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A digital gardens starter monorepo to forge packages and apps.",
+  "author": {
+    "name": "Luciano Amodio (@ MugenCraft)"
+  },
+  "license": "MIT"
+}

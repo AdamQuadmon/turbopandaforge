@@ -1,0 +1,75 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+/.pnp
+.pnp.js
+.pnpm/
+
+# testing
+/coverage
+
+# next.js
+.next
+/out/
+
+# Analyze Bundle
+**/analyze/nodejs.html
+
+# Turbo
+.turbo
+.cache
+.output
+
+# production
+/build
+dist
+dist-ssr
+server/dist
+public/dist
+*.tgz
+
+# misc
+.DS_Store
+*.pem
+.idea/
+.vscode
+
+# debug
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Panda
+styled-system
+
+# Storybook
+storybook-static/
+
+# Sitemap
+sitemap*.xml
+
+# Env
+.env
+.env.development
+.env.production
+.env.local
+.env.*.local
+*.local
+
+# Apps Generated Content
+*.db
+**/public/search.json
+
+# Additional sections can be added or existing sections can be modified to match the specific needs and structure of your TurboPandaForge project.
+.ace
+packages/eslint-flat-config
+packages/tsconfig
