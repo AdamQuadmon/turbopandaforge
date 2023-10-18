@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@turbopandaforge/tsconfig/tsconfig.monorepo.json",
+  "compilerOptions": {
+    // Override any compiler options specified in the extended config
+  },
+  "include": ["packages/**/*", "apps/**/*"]
+}

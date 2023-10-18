@@ -35,7 +35,7 @@
 
 #### Epic: Linting and Formatting Setup
 
-- [x] Add @turbopandaforge/eslint-config
+- [x] Add @turbopandaforge/eslint-flat-config
 - [x] Prettier Setup
 - [x] Set up linting (ESLint)
 - [x] Set up lint-staged and Husky for pre-commit linting and formatting
@@ -72,11 +72,19 @@
 
 ### Iteration 3: NextJs Setup
 
-#### Epic: NextJs
+#### 🛠️ Epic: Core Setup
 
 - [ ] Set up NextJs
 - [ ] Implement NextJs13 appRouter
-- [ ] Security settings
+- [ ] Configure base security settings
+- [ ] Directory Structure Setup (pages, components, public, styles, etc.)
+
+#### 🎨 Epic: Styling and Theming
+
+- [ ] Setup PandaCSS for Modules/Styled-components
+- [ ] Configure Theme Provider
+- [ ] Implement basic styling and theming
+- [ ] Setup global styles
 
 ---
 
@@ -90,6 +98,8 @@
 
 - [ ] Config and Metadata App Settings
 - [ ] Static and dynamic URL handling
+- [ ] Setup API calls handling (e.g., Axios or Fetch setup)
+- [ ] Configure API routes if needed
 
 #### Iteration 5: Markdown & Database
 
@@ -111,6 +121,8 @@
 
 - [ ] Implement PandaCSS & ParkUI
 - [ ] Basic design, including dark/light mode
+- [ ] Create common components (e.g., Button, Input, Modal, etc.)
+- [ ] Setup Storybook for component development and documentation
 
 #### Iteration 7: UI Components
 
@@ -180,6 +192,9 @@
 
 - [ ] Bundle analysis
 - [ ] Aim for 100 Lighthouse score
+- [ ] Configure Image Optimization (Next.js Image component)
+- [ ] Lazy Loading implementation
+- [ ] Implement Server Side Rendering (SSR) or Static Site Generation (SSG) as needed
 
 ### Phase 5: User Engagement & Internationalization
 

@@ -71,5 +71,6 @@ sitemap*.xml
 
 # Additional sections can be added or existing sections can be modified to match the specific needs and structure of your TurboPandaForge project.
 .ace
-packages/eslint-flat-config
-packages/tsconfig
+packages/*
+!packages/tsconfig
+apps/*

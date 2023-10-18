@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Web worker",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    // Specify module code generation.
+    "module": "ESNext",
+    // Specify library files to be included in the compilation for WebWorker.
+    "lib": ["es2022", "webworker"],
+    // Define path aliases for cleaner imports (if needed).
+    "paths": {
+      "@workers/*": ["src/workers/*"]
+    }
+  },
+  "include": ["src/workers/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"]
+}

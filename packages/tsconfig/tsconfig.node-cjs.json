@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node CommonJS lib",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    // Specify module code generation.
+    "module": "CommonJS",
+    // Resolve modules using Node.js module resolution strategy.
+    "moduleResolution": "Node"
+  },
+  "include": ["src/**/*"]
+}

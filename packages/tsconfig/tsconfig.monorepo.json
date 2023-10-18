@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Monorepo lib with composite",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "outDir": "dist",
+    "composite": true,
+    "declarationDir": "./dist"
+  },
+  "include": ["packages/**/*"]
+}
