@@ -1,0 +1,19 @@
+{
+  "name": "@turbopandaforge/utils",
+  "version": "1.0.0",
+  "description": "NodeJs utilities for Turbopanda Forge projects",
+  "exports": {
+    "./*": {
+      "types": "./src/*.ts",
+      "default": "./src/*.ts"
+    }
+  },
+  "devDependencies": {
+    "@turbopandaforge/tsconfig": "workspace:*",
+    "@types/node": "22.7.4",
+    "string-ts": "^2.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

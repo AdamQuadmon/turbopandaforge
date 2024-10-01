@@ -38,6 +38,8 @@ backdrop of a starry cosmos, a panda donning a retro glass helmet is intently wo
 ## 📦 Packages
 
 - tsconfig: common typescript configuration
+- types: common types
+- utils: random stuff
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
