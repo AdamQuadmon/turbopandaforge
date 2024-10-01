@@ -42,8 +42,8 @@ export const defaultConfig: AppConfig = {
     },
   },
   imageGenerator: {},
-  siteMetadata: {},
   navigation: {},
   ui: {},
   seo: {},
+  siteMetadata: {},
 }
