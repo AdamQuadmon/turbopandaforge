@@ -8,10 +8,10 @@ export interface SecuritySettingsConfig {
   xContentTypeOptions: string
   xDnsPrefetchControl: string
   xFrameOptions: string
-  directives: DirectiveConfig
+  directives: DirectivesConfig
 }
 
-export type DirectiveConfig = {
+export type DirectivesConfig = {
   [key in ContentSecurityPolicyDirective]?: string[]
 }
 

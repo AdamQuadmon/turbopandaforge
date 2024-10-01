@@ -1,0 +1,4 @@
+{
+  "extends": "@turbopandaforge/tsconfig/base.json",
+  "include": ["src"]
+}
