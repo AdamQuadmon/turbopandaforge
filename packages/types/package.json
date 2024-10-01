@@ -1,0 +1,31 @@
+{
+  "name": "@turbopandaforge/types",
+  "version": "1.0.0",
+  "description": "Type definitions for Turbopanda Forge projects",
+  "exports": {
+    "./config/*": {
+      "types": "./src/config/*.ts",
+      "default": "./src/config/*.ts"
+    },
+    "./content/*": {
+      "types": "./src/content/*.ts",
+      "default": "./src/content/*.ts"
+    },
+    "./seo/*": {
+      "types": "./src/seo/*.ts",
+      "default": "./src/seo/*.ts"
+    },
+    "./utils/*": {
+      "types": "./src/utils/*.ts",
+      "default": "./src/utils/*.ts"
+    }
+  },
+  "devDependencies": {
+    "@turbopandaforge/tsconfig": "workspace:*",
+    "@types/node": "22.7.4",
+    "@types/react": "18.3.10"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
