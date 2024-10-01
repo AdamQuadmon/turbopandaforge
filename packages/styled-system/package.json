@@ -1,0 +1,53 @@
+{
+  "name": "@turbopandaforge/styled-system",
+  "version": "0.0.1",
+  "description": "Panda CSS presets for Ark UI components",
+  "scripts": {
+    "clean": "git clean -xdf .turbo node_modules",
+    "prepare": "panda codegen --clean"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.46.1",
+    "@pandacss/types": "^0.46.1",
+    "@pandacss/preset-panda": "^0.46.1",
+    "@park-ui/panda-preset": "^0.42.0",
+    "@turbopandaforge/tsconfig": "workspace:*",
+    "pandacss-preset-typography": "^0.1.6",
+    "@types/react": "18.3.10",
+    "react": "18.3.1"
+  },
+  "main": "./src",
+  "exports": {
+    "./css": {
+      "types": "./src/css/index.d.ts",
+      "require": "./src/css/index.mjs",
+      "import": "./src/css/index.mjs"
+    },
+    "./tokens": {
+      "types": "./src/tokens/index.d.ts",
+      "require": "./src/tokens/index.mjs",
+      "import": "./src/tokens/index.mjs"
+    },
+    "./types": {
+      "types": "./src/types/index.d.ts",
+      "require": "./src/types/index.mjs",
+      "import": "./src/types/index.mjs"
+    },
+    "./patterns": {
+      "types": "./src/patterns/index.d.ts",
+      "require": "./src/patterns/index.mjs",
+      "import": "./src/patterns/index.mjs"
+    },
+    "./recipes": {
+      "types": "./src/recipes/index.d.ts",
+      "require": "./src/recipes/index.mjs",
+      "import": "./src/recipes/index.mjs"
+    },
+    "./jsx": {
+      "types": "./src/jsx/index.d.ts",
+      "require": "./src/jsx/index.mjs",
+      "import": "./src/jsx/index.mjs"
+    },
+    "./styles.css": "./src/styles.css"
+  }
+}
