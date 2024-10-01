@@ -3,6 +3,11 @@
  */
 export interface BasePage {
   slug: string
+  title: string
+  path: string
+  articleType?: string
+  excerpt?: string
+  date?: string
 }
 
 /**
@@ -16,13 +21,15 @@ export interface BasePage {
  * `wordCount`: Word count, computed based on `_raw_content`
  */
 export interface PageMetadata {
-  date: string
-  images?: string | string[]
   slug: string
-  tags: string[]
   title: string
-  wordCount: number
+  path: string
   articleType?: string
+  excerpt?: string
+  date?: string
+  images?: string | string[]
+  tags: string[]
+  wordCount: number
   authors?: string | string[]
   bibliography?: string
   canonicalUrl?: string

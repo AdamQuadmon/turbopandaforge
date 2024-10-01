@@ -74,6 +74,8 @@
     "Severino",
     "shiki",
     "shikijs",
+    "signin",
+    "signup",
     "sindresorhus",
     "slideshare",
     "soundcloud",
@@ -88,7 +90,6 @@
     "vfile",
     "WCAG",
     "webshare",
-    "webworker",
-    "zustand"
+    "webworker"
   ]
 }

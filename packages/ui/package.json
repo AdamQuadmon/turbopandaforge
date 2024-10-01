@@ -1,0 +1,45 @@
+{
+  "name": "@turbopandaforge/ui",
+  "version": "0.0.1",
+  "description": "ParkUi user interface",
+  "exports": {
+    "./core/*": {
+      "types": "./src/core/*.tsx",
+      "default": "./src/core/*.tsx"
+    },
+    "./interaction/*": {
+      "types": "./src/interaction/*.tsx",
+      "default": "./src/interaction/*.tsx"
+    },
+    "./navigation/*": {
+      "types": "./src/navigation/*.ts",
+      "import": "./src/navigation/*.tsx"
+    },
+    "./page/*": {
+      "types": "./src/page/*.tsx",
+      "default": "./src/page/*.tsx"
+    }
+  },
+  "scripts": {
+    "clean": "git clean -xdf .turbo node_modules"
+  },
+  "devDependencies": {
+    "@ark-ui/react": "4.1.0",
+    "@icons-pack/react-simple-icons": "^10.0.0",
+    "@shikijs/transformers": "^1.21.0",
+    "@theme-toggles/react": "^4.1.0",
+    "@turbopandaforge/styled-system": "workspace:*",
+    "@turbopandaforge/tsconfig": "workspace:*",
+    "@turbopandaforge/types": "workspace:*",
+    "@uidotdev/usehooks": "^2.4.1",
+    "lucide-react": "^0.447.0",
+    "next": "14.2.14",
+    "react": "18.3.1",
+    "react-hook-form": "^7.53.0",
+    "ts-pattern": "^5.4.0",
+    "usehooks-ts": "^3.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
