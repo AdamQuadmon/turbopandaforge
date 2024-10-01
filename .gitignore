@@ -33,7 +33,6 @@ public/dist
 .DS_Store
 *.pem
 .idea/
-.vscode
 
 # debug
 *.log
@@ -45,7 +44,6 @@ yarn-error.log*
 .vercel
 
 # typescript
-*.tsbuildinfo
 next-env.d.ts
 
 # Panda
@@ -68,9 +66,3 @@ sitemap*.xml
 # Apps Generated Content
 *.db
 **/public/search.json
-
-# Additional sections can be added or existing sections can be modified to match the specific needs and structure of your TurboPandaForge project.
-.ace
-packages/*
-!packages/tsconfig
-apps/*

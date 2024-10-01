@@ -7,21 +7,10 @@
 #### Epic: Repository Setup
 
 - [x] Create project repository
-- [x] Add LICENSE
-- [x] Add turbopandaforge.png
-
-#### Epic: Initial Documentation
-
-- [x] Add README.md
-- [x] Add ROADMAP.md
-- [x] Add docs/README.md
-- [x] Add docs/contributing.md
-- [x] Add docs/code-of-conduct.md
-
-#### Epic: Contributor Guidelines
-
-- [x] Document commit conventions in ./docs/commit-conventions.md
-- [x] Document workflow in ./docs/workflow.md
+- [x] Add Initial Documentation
+- [x] Add Contributor Guidelines
+- [x] Document commit conventions
+- [x] Document workflow
 
 ### Iteration 2: Development Environment Setup
 
@@ -29,53 +18,31 @@
 
 - [x] Implement initial project structure
 - [x] Set up .gitignore
-- [x] Set up Pnpm workspace
+- [x] Set up workspaces
 - [x] Set up Turbo
 - [x] Document scripts in README
 
 #### Epic: Linting and Formatting Setup
 
-- [x] Add @turbopandaforge/eslint-flat-config
-- [x] Prettier Setup
-- [x] Set up linting (ESLint)
-- [x] Set up lint-staged and Husky for pre-commit linting and formatting
+- [x] Implement Biome
 
 #### Epic: Versioning, Change Log & Release Scripts
 
 - [x] Changesets
 - [x] Versioning
-- [x] Document versioning and release scripts in README
-- [x] Setup changeset, version-packages, and release scripts
 
 #### Epic: Continuous Integration Setup
 
 - [x] Set up Vercel CI
 - [x] Set up basic GitHub Actions
-- [x] Git Commit Hooks with Husky
+- [x] Git Commit Hooks with LeftHook
 - [x] commitlint Setup
 
-#### Epic: Development Scripts
-
-- [x] Setup pre-install, re-install scripts
-- [x] Setup development, build, and clean scripts
-- [x] Setup linting and formatting scripts
-- [x] Setup testing placeholder script
-- [x] Setup deduplication check script
-
-#### Epic: Git Hooks
-
-- [x] Setup pre-commit and pre-push hooks
-
-#### Epic: Documentation of Scripts
-
-- [x] Document all scripts in README, including setup and installation, development, code quality and testing, Git Hooks, and versioning and release scripts.
-
-### Iteration 3: NextJs Setup
+### Iteration 3: Next.js Setup
 
 #### 🛠️ Epic: Core Setup
 
-- [ ] Set up NextJs
-- [ ] Implement NextJs13 appRouter
+- [ ] Set up Next.js with 14 appRouter
 - [ ] Configure base security settings
 - [ ] Directory Structure Setup (pages, components, public, styles, etc.)
 
@@ -98,16 +65,15 @@
 
 - [ ] Config and Metadata App Settings
 - [ ] Static and dynamic URL handling
-- [ ] Setup API calls handling (e.g., Axios or Fetch setup)
+- [ ] Setup API calls handling
 - [ ] Configure API routes if needed
 
 #### Iteration 5: Markdown & Database
 
 ##### Epic: Markdown DB & Database Backend
 
-- [ ] Implement Markdown DB for content
+- [ ] Implement Markdown for content
 - [ ] Frontmatter integration
-- [ ] SQLite setup
 
 ---
 
@@ -122,7 +88,6 @@
 - [ ] Implement PandaCSS & ParkUI
 - [ ] Basic design, including dark/light mode
 - [ ] Create common components (e.g., Button, Input, Modal, etc.)
-- [ ] Setup Storybook for component development and documentation
 
 #### Iteration 7: UI Components
 

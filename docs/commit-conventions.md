@@ -17,6 +17,7 @@ Our commit messages follow the [Conventional Commits specification](https://www.
 1. **Type:**
    The type of change you're making. Common types include:
 
+   - `init`: A new package or project initialization
    - `feat`: A new feature
    - `fix`: A bug fix
    - `chore`: Routine tasks or maintenance

@@ -1,27 +1,54 @@
+<!-- markdownlint-disable MD041 -->
+<a id="readme-top"></a>
+
 # 🐼 MugenCraft TurboPandaForge
 
-Welcome to `turbopandaforge`, a robust turborepo monorepo starter crafted by MugenCraft for forging personal digital gardens. This starter is meticulously designed to serve as a comprehensive foundation for developers aiming to kickstart their digital garden projects. Blending the essence of traditional craftsmanship with modern digital artistry, we strive to create an enriching environment for community-driven development and learning.
+Welcome to `turbopandaforge`, a robust Turborepo monorepo starter crafted by MugenCraft to forge personal digital gardens.
+This starter is meticulously designed to serve as a comprehensive foundation for developers aiming to kickstart their
+digital garden projects. Blending the essence of traditional craftsmanship with modern digital artistry, we strive to
+create an enriching environment for community-driven development and learning.
 
-![turbopanda banner](./turbopandaforge.png) _DALL·E 2023-10-16 21.08.01 - Steampunk-cyberpunk anime banner_ Amidst the backdrop of a starry cosmos, a panda donning a retro glass helmet is intently working on an anvil.
+![turbopanda banner](./turbopandaforge.png) _DALL·E 2023-10-16 21.08.01 - Steampunk-cyberpunk anime banner_ Amidst the
+backdrop of a starry cosmos, a panda donning a retro glass helmet is intently working on an anvil.
 
-## 📑 Index
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
 
-- [Features](/#features)
-- [Getting Started](/#getting-started)
-  - [Prerequisites](/#prerequisites)
-  - [Installation](/#installation)
-- [Scripts Overview](/#scripts-overview)
-  - [Setup and Installation](/#setup-and-installation)
-  - [Development](/#development)
-  - [Code Quality and Testing](/#code-quality-and-testing)
-  - [Git Hooks](/#git-hooks)
-  - [Versioning and Release](/#versioning-and-release)
-- [Documentation](/#documentation)
-- [Contribution](/#contribution)
-  - [Planning & Progress](/#planning--progress)
-  - [Contribution Protocols](/#contribution-protocols)
-- [License](/#license)
-- [Acknowledgments](/#acknowledgments)
+- [🚀 Packages](#-packages)
+- [🚀 Features](#-features)
+  - [✅ Completed Features](#-completed-features)
+  - [🛠️ Upcoming Features](#️-upcoming-features)
+- [🚀 Getting Started](#-getting-started)
+- [🛠 Scripts Overview](#-scripts-overview)
+  - [� Development](#-development)
+  - [✅ Code Quality and Testing](#-code-quality-and-testing)
+  - [🎣 Git Hooks triggered by Husky](#-git-hooks-triggered-by-husky)
+  - [🚢 Versioning and Release](#-versioning-and-release)
+- [📚 Documentation](#-documentation)
+- [🤝 Contribution](#-contribution)
+- [📜 License](#-license)
+- [🙌 Acknowledgments](#-acknowledgments)
+
+</details>
+
+## 🚀 Packages
+
+- cli: generate app config
+- configs: build app config with:
+  - Next.js Config
+  - Next.js Plugins Config
+  - App Providers Config
+  - Server Config
+  - Generators Config
+  - Site Metadata Config
+  - Navigation Config
+  - Ui Config
+- contentLayer:
+- seo:
+  - JSON-LD Schema helpers.
+  - SEO configuration settings.
+- types: types for app config
 
 ## 🚀 Features
 
@@ -43,9 +70,9 @@ Welcome to `turbopandaforge`, a robust turborepo monorepo starter crafted by Mug
 
 ### 🛠️ Upcoming Features
 
-- **🖥️ NextJs Setup:**
+- **🖥️ Next.js Setup:**
 
-  - 🔐 Setting up NextJs and implementing NextJs13 appRouter along with security settings.
+  - 🔐 Setting up Next.js and implementing NextJs13 appRouter along with security settings.
 
 - **🧠 Core Functionalities:**
 
@@ -70,56 +97,26 @@ Feel free to explore the roadmap, contribute, or provide feedback to help us imp
 
 ## 🚀 Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Here's how you can set it up:
+```sh
+bunx degit mugencraft/turbopandaforge my-app
+cd my-app
+bun install
+```
 
-### 🛠️ Prerequisites
+To run:
 
-Ensure you have the following installed on your local machine:
+```sh
+bun dev
+```
 
-- [Node.js](https://nodejs.org/) (v18 or newer)
-- [Pnpm](https://pnpm.io/) (v7 or newer)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### 📥 Installation
-
-Follow these steps to get the project set up on your machine:
-
-1. **Clone the Repository:**
-
-   Get a copy of the repository on your local machine by running:
-
-   ```bash
-   git clone https://github.com/MugenCraft/TurboPandaForge.git
-
-   ```
-
-2. **Navigate to the project directory**:
-
-   ```bash
-   cd turbopandaforge
-   ```
-
-3. **Install dependencies**:
-
-   ```bash
-   pnpm install
-   ```
-
-4. **Start the development server**:
-
-   ```bash
-   pnpm dev
-   ```
-
-Now, you can access the project at `http://localhost:3002/`. The page will reload automatically as you make changes to the code. Dive in and start exploring the project! 🧑‍💻
+Now, you can access the project at `http://localhost:3002/`. The page will reload automatically as you make changes
+to the code. Dive in and start exploring the project! 🧑‍💻
 
 ## 🛠 Scripts Overview
 
 In order to maintain code quality and consistency, the project utilizes various scripts managed by pnpm:
-
-### 🚀 Setup and Installation
-
-- **`preinstall`**: Ensures the use of `pnpm` as the package manager by executing [`npx only-allow pnpm`](https://www.npmjs.com/package/only-allow).
-- **`reinstall`**: Cleans the `node_modules` directory and reinstalls dependencies.
 
 ### 💻 Development
 
@@ -163,7 +160,7 @@ Quick links to get on board:
 
 - **🗺 Planning & Progress:**
 
-  - [Roadmap](./docs/roadmap.MD): Our journey and major milestones ahead.
+  - [Roadmap](./docs/roadmap.md): Our journey and major milestones ahead.
   - [Pipeline Roadmap](./docs/pipeline-roadmap.md): Delve into our development pipeline.
 
 - **🛠 Contribution Protocols:**
