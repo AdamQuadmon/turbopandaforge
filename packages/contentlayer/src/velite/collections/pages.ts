@@ -1,6 +1,6 @@
 import { exec } from 'node:child_process'
 import { promisify } from 'node:util'
-import { type Collection, defineCollection, s } from 'velite'
+import { defineCollection, s } from 'velite'
 
 const execAsync = promisify(exec)
 
@@ -62,7 +62,6 @@ export const posts = defineCollection({
       slug: s.slug('post'), // validate format, unique in posts collection
       date: s.isodate(), // input Date-like string, output ISO Date string.
       updated: timestamp(),
-      video: s.file().optional(), // input file relative path, output file public path.
       featured: s.boolean().default(false),
       category: s.string().default('Journal'),
       tags: s.array(s.string()).default([]),
