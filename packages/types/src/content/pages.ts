@@ -8,6 +8,7 @@ export interface BasePage {
   articleType?: string
   excerpt?: string
   date?: string
+  lastMod?: string
 }
 
 /**
@@ -27,6 +28,7 @@ export interface PageMetadata {
   articleType?: string
   excerpt?: string
   date?: string
+  lastMod?: string
   images?: string | string[]
   tags: string[]
   wordCount: number
@@ -36,7 +38,6 @@ export interface PageMetadata {
   description?: string
   draft?: boolean
   language?: string
-  lastMod?: string
   layout?: string
   mainEntity?: string
   pageType?: string
