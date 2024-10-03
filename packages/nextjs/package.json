@@ -10,6 +10,10 @@
     "./plugins/*": {
       "types": "./src/plugins/*.ts",
       "default": "./src/plugins/*.ts"
+    },
+    "./ui/*": {
+      "types": "./src/ui/*.tsx",
+      "default": "./src/ui/*.tsx"
     }
   },
   "scripts": {
