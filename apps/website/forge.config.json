@@ -1,0 +1,9 @@
+{
+  "siteUrl": "https://forge.mugencraft.com",
+  "nextjs": {
+    "transpilePackages": ["@turbopandaforge/ui", "@turbopandaforge/design-system"]
+  },
+  "navigation": {
+    "sitemapPaths": ["about", "posts"]
+  }
+}

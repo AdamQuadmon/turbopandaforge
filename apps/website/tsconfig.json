@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@turbopandaforge/tsconfig/nextjs.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"],
+      "#content": ["./.velite"]
+    }
+  },
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "*.ts", "*.tsx", "*.mjs", "src"],
+  "exclude": ["node_modules"]
+}
