@@ -4,7 +4,7 @@ import type { PropsWithChildren, ReactElement, ReactNode } from 'react'
 export interface NavbarFullProps {
   navbarTop: NavbarTopProps
   navbarMain: NavbarProps
-  navBottom: ReactNode[]
+  navBottom: NavItemProps[]
 }
 
 export interface NavbarTopProps {
@@ -21,22 +21,19 @@ export interface NavbarProps {
 }
 
 export interface NavbarBottomProps {
-  nav: ReactNode[]
+  nav: NavItemProps[]
 }
 
 export interface NavItemProps {
   title: string
+  path?: string
   icon?: ReactElement
   info?: ReactElement
   description?: string
   label?: string
-  path?: string
   size?: ButtonVariantProps['size']
   items?: NavItemProps[]
-  itemsLayout?: {
-    direction?: 'column' | 'row'
-    footerButtons: ReactNode[]
-  }
+  direction?: 'column' | 'row'
 }
 
 export interface SidebarProps extends PropsWithChildren {

@@ -69,10 +69,18 @@ See [Park-UI repo][Park-UI-components] for more components.
 - PageContent
 - PageDate
 - PageRelated
+- Article
+- ProgressBar
+
+### Hooks
+
+- `useScrollDirection` - [Gorzelinski scroll directions][gorzelinski-dir]
+- `useScrollProgress` - [Gorzelinski scroll progress][gorzelinski-progress]
 
 ### Lib
 
-- `getSubTitleAs` - return the next sub heading
+- `getNextHeading` - return the next heading
+- `getNextSize` - return the next size
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [Park-UI]: https://park-ui.com/
@@ -98,3 +106,5 @@ See [Park-UI repo][Park-UI-components] for more components.
 [SignOutButton]: https://github.com/chakra-ui/ark/blob/main/website/src/components/auth/sign-out-button.tsx
 [CodePreview]: https://github.com/chakra-ui/ark/blob/main/website/src/components/code-preview.tsx
 [table-of-content]: https://github.com/chakra-ui/ark/blob/main/website/src/components/table-of-content.tsx
+[gorzelinski-dir]: https://github.com/gorzelinski/gorzelinski.com/blob/main/hooks/use-scroll-direction.tsx
+[gorzelinski-progress]: https://github.com/gorzelinski/gorzelinski.com/blob/main/hooks/use-scroll-progress.tsx

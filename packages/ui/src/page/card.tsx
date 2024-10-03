@@ -3,29 +3,31 @@ import NextLink from 'next/link'
 
 import type { BasePage } from '@turbopandaforge/types/content/pages'
 
-import { type HeadingTitles, getSubTitleAs } from '../lib/headings'
+import { type HeadingTitles, type TextSizes, getNextHeading, getNextSize } from '../lib/headings'
 
 import { Card } from '../core/card'
 import { Heading } from '../core/heading'
 
-interface PageCardProps {
+interface PageCardProps extends Omit<Card.RootProps, 'page'> {
   page: BasePage
-  titleAs?: HeadingTitles
+  heading?: HeadingTitles
+  size?: TextSizes
 }
 
-export const PageCard = ({ page, titleAs = 'h2' }: PageCardProps) => {
-  const subTitleAs = getSubTitleAs(titleAs)
-  const { title, path, excerpt } = page
+export const PageCard = ({ page, heading = 'h2', size = '5xl', ...props }: PageCardProps) => {
+  const subHeading = getNextHeading(heading)
+
+  const { title, slug, excerpt } = page
   return (
-    <Card.Root>
-      <Card.Title>
-        <Heading as={titleAs} mb="6" textStyle="6xl">
-          <NextLink href={path as Route}>{title}</NextLink>
+    <Card.Root {...props}>
+      <Card.Title asChild>
+        <Heading as={heading} mb="6" p="3" textStyle={size}>
+          <NextLink href={`/blog/${slug}` as Route}>{title}</NextLink>
         </Heading>
       </Card.Title>
       <Card.Body>{excerpt}</Card.Body>
       <Card.Footer>
-        <Heading as={subTitleAs}>{path}</Heading>
+        <Heading as={subHeading}>{slug}</Heading>
       </Card.Footer>
     </Card.Root>
   )

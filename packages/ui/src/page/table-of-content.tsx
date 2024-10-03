@@ -1,4 +1,5 @@
 'use client'
+import type { TocEntry } from '@turbopandaforge/types/content/pages'
 import { useWindowScroll } from '@uidotdev/usehooks'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
@@ -6,26 +7,13 @@ import { useEffect, useRef, useState } from 'react'
 import { SegmentGroup } from '../core/segment-group'
 import { Text } from '../core/text'
 
-interface TocEntry {
-  /**
-   * Title of the entry
-   */
-  title: string
-  /**
-   * URL that can be used to reach
-   * the content
-   */
-  url: string
-  /**
-   * Nested items
-   */
-  items: TocEntry[]
-}
-
 interface Props {
   entries?: TocEntry[]
 }
 
+/**
+ * @see https://github.com/chakra-ui/ark/blob/main/website/src/components/table-of-content.tsx
+ */
 export const TableOfContent = (props: Props) => {
   const entries = flattenTocEntries(props.entries)
   const activeItem = useScrollSpy(entries.map((entry) => entry.url))
