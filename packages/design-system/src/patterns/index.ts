@@ -2,18 +2,18 @@ import { definePattern } from '@pandacss/dev'
 
 export const patterns = {
   extend: {
-    // container: definePattern({
-    //   transform(props: Record<string, unknown>) {
-    //     return {
-    //       position: 'relative',
-    //       width: '100%',
-    //       maxW: '8xl',
-    //       mx: 'auto',
-    //       px: { base: '4', md: '8' },
-    //       ...props,
-    //     }
-    //   },
-    // }),
+    container: definePattern({
+      transform(props: Record<string, unknown>) {
+        return {
+          position: 'relative',
+          width: '100%',
+          maxW: '8xl',
+          mx: 'auto',
+          px: { base: '4', md: '8' },
+          ...props,
+        }
+      },
+    }),
     scrollable: definePattern({
       description: 'A container that allows for scrolling',
       defaultValues: {

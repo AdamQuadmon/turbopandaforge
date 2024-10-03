@@ -31,7 +31,7 @@ Base example:
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
-      "#generated/content": ["./.velite"]
+      "#content": ["./.velite"]
     },
     "plugins": [
       {

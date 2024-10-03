@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Panda CSS presets for Ark UI components",
   "scripts": {
-    "clean": "git clean -xdf .turbo node_modules",
+    "clean": "git clean -xdf .turbo node_modules src",
     "prepare": "panda codegen --clean"
   },
   "devDependencies": {
@@ -13,7 +13,7 @@
     "@park-ui/panda-preset": "^0.42.0",
     "@turbopandaforge/tsconfig": "workspace:*",
     "pandacss-preset-typography": "^0.1.6",
-    "@types/react": "18.3.10",
+    "@types/react": "18.3.11",
     "react": "18.3.1"
   },
   "main": "./src",

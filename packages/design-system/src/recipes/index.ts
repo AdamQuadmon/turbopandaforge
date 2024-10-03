@@ -1,8 +1,9 @@
-import { background } from './background.recipe'
-import { banner } from './banner.recipe'
-import { footer } from './footer.recipe'
-import { layout } from './layout.recipe'
-import { navbar } from './navbar.recipe'
+import { background } from './background'
+import { banner } from './banner'
+import { footer } from './footer'
+import { layout } from './layout'
+import { navbar } from './navbar'
+import { progress } from './progress'
 
 export const recipes = {
   background,
@@ -13,4 +14,5 @@ export const slotRecipes = {
   footer,
   layout,
   navbar,
+  progress,
 }
