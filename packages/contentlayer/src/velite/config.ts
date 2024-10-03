@@ -10,7 +10,7 @@ import { tags } from './collections/tags'
 
 // https://velite.js.org/guide/velite-schemas
 export const config = defineConfig({
-  root: 'content',
+  root: '../../content',
   output: {
     data: '.velite',
     assets: 'public/static',

@@ -28,7 +28,7 @@ const timestamp = () =>
     })
 
 const basePageSchema = {
-  priority: s.string(),
+  priority: s.string().optional(),
   title: s.string().max(99),
   cover: s.image().optional(), // input image relative path, output image object with blurImage.
   description: s.string().max(999).optional(),
@@ -44,7 +44,7 @@ const basePageSchema = {
 
 export const pages = defineCollection({
   name: 'Page',
-  pattern: 'pages/**/*.mdx',
+  pattern: 'pages/**/*.md*',
   schema: s
     .object({
       ...basePageSchema,
@@ -55,7 +55,7 @@ export const pages = defineCollection({
 
 export const posts = defineCollection({
   name: 'Post',
-  pattern: 'posts/**/*.md',
+  pattern: 'posts/**/*.md*',
   schema: s
     .object({
       ...basePageSchema,

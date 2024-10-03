@@ -1,7 +1,5 @@
 import { defineCollection, s } from 'velite'
-
-// same as in categories.ts - velite does not allow export
-const count = s.object({ total: s.number(), posts: s.number() }).default({ total: 0, posts: 0 })
+import { count } from '../validators/count'
 
 export const tags = defineCollection({
   name: 'Tag',
