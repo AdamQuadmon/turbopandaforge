@@ -44,6 +44,7 @@ See [Park-UI repo][Park-UI-components] for more components.
   - SignUpButton
   - UserButtons
   - SearchForm
+  - LocaleSelect
 
 ### Navigation
 

@@ -4,6 +4,14 @@ A [Next.js](https://nextjs.org/) blog project with SEO and Analytics featuring
 [velite][velite] for **data handling** and
 [PandaCSS🐼](https://panda-css.com/) for the UI.
 
+## Features
+
+### Translations and i18n
+
+We are using next-intl without routing.
+We leverage a `LOCALE` env variable to set the locale to load.
+This way we can build different languages to different domains.
+
 ## Steps to config
 
 - Create a `.env` file similar to [`.env.example`](.env.example).

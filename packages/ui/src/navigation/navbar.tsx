@@ -10,7 +10,6 @@ import { SearchForm } from '../interaction/search'
 import Link from 'next/link'
 import { NavItemMega } from './nav-item-mega'
 
-// TODO: highlight current element
 export const Navbar = ({ brand, navPrimary, navSecondary, cta }: NavbarProps) => {
   return (
     <HStack justify="space-between" w="full" zIndex="navOver">

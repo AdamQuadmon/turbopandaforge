@@ -1,4 +1,4 @@
-export type PropsWithParams = {
+export type PropsWithSlug = {
   params: {
     slug: string
   }

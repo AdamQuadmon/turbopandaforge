@@ -1,29 +1,26 @@
 import { Container } from '@turbopandaforge/styled-system/jsx'
-import type { PropsWithParams } from '@turbopandaforge/types/ui/base'
+import type { PropsWithSlug } from '@turbopandaforge/types/ui/base'
 import { PageCards } from '@turbopandaforge/ui/page/cards'
 
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { getCategoryBySlug, getPostByCategory } from '~/lib/content'
+import { getCategories, getCategoryBySlug, getPostByCategory } from '~/lib/content'
 
-import { categories } from '#content'
-
-export function generateMetadata({ params }: PropsWithParams): Metadata {
-  const category = getCategoryBySlug(params.slug)
+export function generateMetadata({ params: { slug } }: PropsWithSlug): Metadata {
+  const category = getCategoryBySlug(slug)
   if (category == null) return {}
   return { title: category.name }
 }
 
-export function generateStaticParams(): PropsWithParams['params'][] {
-  return categories.map((category) => ({ slug: category.slug }))
+export function generateStaticParams() {
+  return getCategories().map((category) => ({ slug: category.slug }))
 }
 
-export default function CategoryPage({ params }: PropsWithParams) {
-  const category = getCategoryBySlug(params.slug)
-  const posts = getPostByCategory(category.name)
-
+export default function CategoryPage({ params: { slug } }: PropsWithSlug) {
+  const category = getCategoryBySlug(slug)
   if (category == null) notFound()
+  const posts = getPostByCategory(category.name)
 
   return (
     <Container>

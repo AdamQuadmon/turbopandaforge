@@ -2,17 +2,18 @@ import { Box, Container } from '@turbopandaforge/styled-system/jsx'
 import { background } from '@turbopandaforge/styled-system/recipes'
 import { PageCards } from '@turbopandaforge/ui/page/cards'
 
-import { getPageBySlug } from '~/lib/content'
+import { useTranslations } from 'next-intl'
 
-import { categories } from '#content'
+import { getCategories } from '~/lib/content'
 
-export default async function CategoriesPage() {
-  const page = getPageBySlug('categories')
+export default function CategoriesPage() {
+  const t = useTranslations('CategoriesPage')
+  const categories = getCategories()
 
   return (
     <Container>
       <Box className={background({ visual: 'radiant' })} />
-      <PageCards {...{ pages: categories, title: 'Categories', heading: 'h1' }} />
+      <PageCards {...{ pages: categories, title: t('title'), heading: 'h1' }} />
     </Container>
   )
 }

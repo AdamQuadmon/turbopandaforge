@@ -1,5 +1,5 @@
 import type { Route } from 'next'
-import NextLink from 'next/link'
+import Link from 'next/link'
 
 import type { BasePage } from '@turbopandaforge/types/content/pages'
 
@@ -22,7 +22,7 @@ export const PageCard = ({ page, heading = 'h2', size = '5xl', ...props }: PageC
     <Card.Root {...props}>
       <Card.Title asChild>
         <Heading as={heading} mb="6" p="3" textStyle={size}>
-          <NextLink href={`/blog/${slug}` as Route}>{title}</NextLink>
+          <Link href={`/blog/${slug}` as Route}>{title}</Link>
         </Heading>
       </Card.Title>
       <Card.Body>{excerpt}</Card.Body>

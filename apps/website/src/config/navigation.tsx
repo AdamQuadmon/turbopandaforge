@@ -3,12 +3,16 @@ import type {
   NavbarFullProps,
   NavbarProps,
 } from '@turbopandaforge/types/ui/navigation'
+import { Badge } from '@turbopandaforge/ui/core/badge'
 import { UserButtons } from '@turbopandaforge/ui/interaction/user-buttons'
 
-import { BellPlus, Component, HeartHandshake, OmegaIcon, Rss, Shell, Tag } from 'lucide-react'
+import { BellPlus, Component, HeartHandshake, Rss, Shell, Tag } from 'lucide-react'
+import type { Route } from 'next'
 
+import { LocaleSwitcher } from '~/i18n/locale-switcher'
+import { NavLink } from '~/i18n/nav-link'
 import { getCategoryLinks, getLatestPostLinks, getTagLinks } from '~/lib/content'
-import { Logo } from '../logo'
+import { Logo } from '~/logo'
 
 const categories = getCategoryLinks()
 const tags = getTagLinks()
@@ -82,7 +86,11 @@ export const navbar: NavbarFullProps = {
   navbarTop: {
     left: '@adam_quadmon',
     center: 'FOLLOW NOW!',
-    right: '@mugencraft',
+    right: <LocaleSwitcher />,
   },
-  navBottom: categories,
+  navBottom: categories.map(({ title, path }, k) => (
+    <NavLink href={path as Route} key={k}>
+      <Badge variant="subtle">{title}</Badge>
+    </NavLink>
+  )),
 }
