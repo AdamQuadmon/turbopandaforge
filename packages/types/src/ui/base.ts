@@ -3,3 +3,9 @@ export type PropsWithSlug = {
     slug: string
   }
 }
+
+export type PropsWithRest = {
+  params: {
+    rest: string[]
+  }
+}

@@ -1,6 +1,6 @@
 # TurboPandaForge Development Roadmap
 
-## Milestone 1: Project Initialization
+## Milestone 1: Setup
 
 ### Iteration 1: Project Setup and Contributor Onboarding
 
@@ -42,72 +42,142 @@
 
 #### 🛠️ Epic: Core Setup
 
-- [ ] Set up Next.js with 14 appRouter
-- [ ] Configure base security settings
-- [ ] Directory Structure Setup (pages, components, public, styles, etc.)
+- [x] Set up Next.js with 14 appRouter
+- [x] Configure base security settings
+- [x] Directory Structure Setup (pages, components, public, styles, etc.)
 
 #### 🎨 Epic: Styling and Theming
 
-- [ ] Setup PandaCSS for Modules/Styled-components
-- [ ] Configure Theme Provider
-- [ ] Implement basic styling and theming
-- [ ] Setup global styles
+- [x] Setup PandaCSS for Modules/Styled-components
+- [x] Configure Theme Provider
+- [x] Implement basic styling and theming
+- [x] Setup global styles
 
 ---
 
-## Milestone 2: Core Functionalities
+## Milestone 2: Data Handling
 
-### Phase 1: Data Handling
+### Iteration 4: Config & Markdown
 
-#### Iteration 4: App Config
+#### Epic: App Config
 
-##### Epic: App Config
+- [x] Config and Metadata App Settings
+- [x] Static and dynamic URL handling
+- [x] Setup API calls handling
+- [x] Configure API routes if needed
 
-- [ ] Config and Metadata App Settings
-- [ ] Static and dynamic URL handling
-- [ ] Setup API calls handling
-- [ ] Configure API routes if needed
+#### Epic: Markdown & CSV Metadata
 
-#### Iteration 5: Markdown & Database
-
-##### Epic: Markdown DB & Database Backend
-
-- [ ] Implement Markdown for content
-- [ ] Frontmatter integration
+- [x] Implement Markdown for content
+- [x] Frontmatter via CVS integration
 
 ---
 
-## Milestone 3: User Interface & Pages
+## Milestone 3: Basic UI/UX & Pages
 
-### Phase 2: Basic UI/UX
+### Iteration 5: UI
 
-#### Iteration 6: UI Setup
+#### Epic: UI Framework
 
-##### Epic: UI Framework
+- [x] Implement PandaCSS & ParkUI
+- [x] Basic design, including dark/light mode
+- [x] Create common components (e.g., Button, Input, Modal, etc.)
 
-- [ ] Implement PandaCSS & ParkUI
-- [ ] Basic design, including dark/light mode
-- [ ] Create common components (e.g., Button, Input, Modal, etc.)
+#### Epic: UI Components
 
-#### Iteration 7: UI Components
+- [x] Implement basic Layout components
+- [x] Implement basic functionality of reading pages and posts
 
-##### Epic: UI Components
+### Iteration 6: Advanced UI Components
 
-- [ ] Implement basic Layout components
-- [ ] Implement basic functionality of reading pages and posts
+#### Epic: Page Creation
+
+- [x] OG image generation
+- [x] MDX components
+- [x] Page Card
+- [x] Pages Cards
+
+#### Epic: Web Pages
+
+- [x] Page
+  - [x] Article
+  - [x] Tag
+- [x] Collections
+  - [x] Category
+
+## Milestone 4: SEO & Internationalization
+
+### Iteration 7: SEO & Internationalization
+
+#### Epic: SEO
+
+- [x] Implement SEO metadata
+- [x] OpenGraph setup
+- [x] JSON-LD integration
+
+#### Epic: Internationalization
+
+- [x] Set up internationalization (i18n) framework
+  - [x] Select and integrate next-intl i18n library
+  - [x] Configure languages and translations
+  - [x] Implement language switcher UI
+
+## Milestone X: Images
+
+### Iteration X: Implement Images
+
+#### Epic: Implement Images
+
+- [ ] Add Image and Images Metadata to Velite Collections
+- [ ] Add images counter for Categories and Tags
+- [ ] Implement PageCover in PageContent
+
+## Milestone X: Bug Fixing & Optimization
+
+### Iteration X: Improve Internationalization
+
+#### Epic: Complete Internationalization
+
+- [ ] Use options and translations in website `config/navigation.tsx`
+- [ ] Implement go to other language in LocaleSwitcherSelect
+- [ ] Implement page.alternateLanguages metadata to use in LocaleSwitcherSelect
+- [ ] Generate page.alternateLanguages based on available content
+
+### Iteration X: Improve Velite
+
+#### Epic: Velite Page Advanced
+
+- [ ] Improve createMetadata defaults and move to seo or contentLayer package
+- [ ] Implement `pageType`: 'web' | 'category' | 'others'
+- [ ] On `RestPage`: use pageType to render different components
+- [ ] Implement `articleType`
+- [ ] On `PostPage` and `PageContent`: use articleType to render different components
+- [ ] Implement `images` and `mainEntity`
+
+#### Epic: Velite Advanced
+
+- [ ] Link Options, Page and other derived collections to Velite Zod Schemas
+
+#### Epic: New Velite Collections
+
+- [ ] Add Authors collection
+- [ ] Implement authors in metadata
+
+### Iteration X: Improve UX/UI
+
+#### Epic: Improve Navbar
+
+- [ ] On `NavbarFullProps` and other, be generic and only state the available slots, not their content
+- [ ] Verify `NavLink` active status
+
+#### Epic: Style and Documentation
+
+- [ ] verify and document **design-system** `banner` recipe, it assumes there are .banner-hidden and .sidebar-container
+
+#### Epic: Content Components
+
 - [ ] Back to top button
-
-#### Iteration 8: Page Creation
-
-#### Iteration 8: Advanced UI Components
-
-##### Epic: Content Components
-
-- [ ] OG image generation
 - [ ] Social icons
-- [ ] MDX components
-- [ ] Page Card
-- [ ] Pages Cards
 - [ ] Reading time
 - [ ] Pagination
 - [ ] prev/next post links
@@ -115,15 +185,11 @@
 - [ ] Image and Gallery
 - [ ] MDX code highlighting
 
-##### Epic: Web Pages
+#### Epic: Other Web Pages
 
 - [ ] Page
-  - [ ] Article
-  - [ ] Tag
   - [ ] Image
 - [ ] Collections
-  - [ ] Category
-  - [ ] Tags
   - [ ] Gallery
 - [ ] About
   - [ ] Projects
@@ -134,65 +200,45 @@
 - [ ] Profit
   - [ ] Donate
 
----
+#### Epic: Comments & Socials
 
-## Milestone 4: SEO & Advanced Features
+- [ ] Commenting system (e.g., Disqus, Commento)
+- [ ] Social sharing buttons
+- [ ] Post like counter
 
-### Phase 3: SEO & Routing
+### Iteration x: Improve SEO
 
-#### Iteration 9: Basic SEO
+#### Epic: Advanced SEO
 
-##### Epic: SEO
+- [ ] Implement Analytics
+- [ ] Implement OpenGraph types
+- [ ] Implement Schema WebPage and Article types
+- [ ] Improve `getBlogPostingSchema` using page.articleType
+- [ ] Improve `MetaImage` ui component
+- [ ] Improve `FavIcon` ui component
 
-- [ ] Analytics
-- [ ] Implement SEO metadata
-- [ ] OpenGraph setup
-- [ ] JSON-LD integration
+#### Epic: Improve getContactPointSchema
 
-### Phase 4: Advanced SEO & Performance
+- [ ] add options.availableLanguage to specify contact point languages
+- [ ] implement other ContactPoints with no telephone
 
-#### Iteration 10: Performance
+### Iteration X: Improve Internals
 
-##### Epic: Performance
+#### Epic: Improve Config Package
 
+- [ ] Check if we still need config package
+- [ ] Validate loaded config if still needed
+
+### Iteration x: Performance & Accessibility
+
+#### Epic: Performance
+
+- [ ] Implement Server Side Rendering (SSR) or Static Site Generation (SSG) as needed
 - [ ] Bundle analysis
 - [ ] Aim for 100 Lighthouse score
-- [ ] Configure Image Optimization (Next.js Image component)
+- [ ] Configure Image Optimization (Next.js Image component or CDN)
 - [ ] Lazy Loading implementation
-- [ ] Implement Server Side Rendering (SSR) or Static Site Generation (SSG) as needed
 
-### Phase 5: User Engagement & Internationalization
+#### Epic: Accessibility
 
-#### Iteration 11: Socials & Engagement
-
-##### Epic: Comments & Socials
-
-- [ ] Commenting system
-  - [ ] Select and integrate a commenting platform (e.g., Disqus, Commento)
-  - [ ] Design comment section UI
-  - [ ] Implement comment count feature
-- [ ] Social sharing buttons
-  - [ ] Design and implement share buttons UI
-  - [ ] Configure share URLs and metadata
-- [ ] Post like counter
-  - [ ] Design and implement like button UI
-  - [ ] Set up backend or third-party service for tracking likes
-- [ ] Visitor counter
-  - [ ] Implement visitor counter with privacy-preserving analytics (e.g., Plausible Analytics)
-  - [ ] Display visitor count on page
-
-#### Iteration 12: Accessibility & Internationalization
-
-##### Epic: Accessibility
-
-- [ ] Conduct accessibility audits
-  - [ ] Utilize tools like Axe or Lighthouse for accessibility auditing
-  - [ ] Identify and fix accessibility issues
-  - [ ] Ensure compliance with WCAG standards
-
-##### Epic: Internationalization
-
-- [ ] Set up internationalization (i18n) framework
-  - [ ] Select and integrate an i18n library (e.g., i18next)
-  - [ ] Configure languages and translations
-  - [ ] Implement language switcher UI
+- [ ] Conduct Lighthouse accessibility audits

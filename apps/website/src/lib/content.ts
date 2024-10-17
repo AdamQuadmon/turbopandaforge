@@ -1,26 +1,30 @@
 import type { NavItemProps } from '@turbopandaforge/types/ui/navigation'
-import { categories, pages, posts, tags } from '#content'
-import type { Category, Page, Post, Tag } from '#content'
+import { shouldFilterStatus } from '@turbopandaforge/utils/content'
 
-// TODO implement locale filtering if needed
+import { titleCase } from 'string-ts'
+
+import { categories, options, pages, posts, tags } from '#content'
+import type { Category, Options, Page, Post, Tag } from '#content'
+
+export const getOptions = (): Options => {
+  return options
+}
 
 /**
- * Category
+ * Create base metadata from slug
  */
-
-export const getCategories = (): Category[] | [] => {
-  return categories
-}
-
-export const getCategoryBySlug = (slug: string): Category | undefined => {
-  return getCategories().find((category) => category.slug === slug)
-}
-
-export const getCategoryLinks = (): NavItemProps[] => {
-  return getCategories().map(({ name, count, slug }) => ({
-    title: `${name} (${count.total})`,
-    path: `/category/${slug}`,
-  }))
+export const createMetadata = (slug: string) => {
+  const { locale } = options
+  return {
+    locale,
+    title: titleCase(slug),
+    permalink: `/${slug}`,
+    slug,
+    path: slug,
+    excerpt: slug,
+    lastMod: new Date().toISOString(),
+    description: titleCase(slug),
+  }
 }
 
 /**
@@ -36,9 +40,28 @@ export const getTagBySlug = (slug: string): Tag | undefined => {
 }
 
 export const getTagLinks = (): NavItemProps[] => {
-  return getTags().map(({ name, count, slug }) => ({
-    title: `${name} (${count.total})`,
+  return getTags().map(({ title, count, slug }) => ({
+    title: `${title || titleCase(slug)} (${count.total})`,
     path: `/tag/${slug}`,
+  }))
+}
+
+/**
+ * Categories
+ */
+
+export const getCategories = (): Category[] => {
+  return categories
+}
+
+export const getCategoryBySlug = (slug: string): Category | undefined => {
+  return getCategories().find((category) => category.slug === slug)
+}
+
+export const getCategoryLinks = (): NavItemProps[] => {
+  return getCategories().map(({ count, path, slug, title }) => ({
+    title: `${title || titleCase(slug)} (${count.total})`,
+    path: `/${path}`,
   }))
 }
 
@@ -46,8 +69,8 @@ export const getTagLinks = (): NavItemProps[] => {
  * Pages
  */
 
-export const getPages = (): Page[] | [] => {
-  return pages
+export const getPages = (): Page[] => {
+  return pages.filter((page) => shouldFilterStatus(page))
 }
 
 export const getPageBySlug = (slug: string): Page | undefined => {
@@ -55,15 +78,28 @@ export const getPageBySlug = (slug: string): Page | undefined => {
 }
 
 /**
+ * Pages and Categories
+ */
+
+export const getPagesAndCategories = (): (Page | Category)[] => {
+  return [...getPages(), ...getCategories()]
+}
+
+export const getPageOrCategoryByPermalink = (permalink: string): Page | Category | undefined => {
+  const page = getPages().find((page) => permalink === page.permalink)
+
+  return page ? page : getCategories().find((category) => permalink === category.permalink)
+}
+
+/**
  * Posts
  */
 
-// TODO: implement filters: draft
-export const getPosts = (): Post[] | [] => {
-  return posts
+export const getPosts = (): Post[] => {
+  return posts.filter((post) => shouldFilterStatus(post))
 }
 
-export const getLatestPost = (): Post[] | [] => {
+export const getLatestPost = (): Post[] => {
   return getPosts().slice(-3) || []
 }
 
@@ -86,6 +122,10 @@ export const getPostByCategory = (category: string): Post | undefined => {
   return getPosts().filter((post) => post.category === category)
 }
 
+export const getPostByCategories = (categories: string[]): Post | undefined => {
+  return getPosts().filter((post) => categories.includes(post.category))
+}
+
 export const getPostByTag = (tag: string): Post | undefined => {
-  return getPosts().filter((post) => post.tags.includes(tag))
+  return getPosts().filter((post) => post.tags?.includes(tag))
 }

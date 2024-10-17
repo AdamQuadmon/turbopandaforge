@@ -48,6 +48,8 @@ next-env.d.ts
 
 # Panda
 styled-system
+!packages/styled-system
+packages/styled-system/src
 
 # Storybook
 storybook-static/
@@ -66,3 +68,5 @@ sitemap*.xml
 # Apps Generated Content
 *.db
 **/public/search.json
+
+.velite

@@ -1,15 +1,15 @@
 import type { Route } from 'next'
 import Link from 'next/link'
 
-import type { BasePage } from '@turbopandaforge/types/content/pages'
+import type { Page } from '@turbopandaforge/types/content/pages'
 
-import { type HeadingTitles, type TextSizes, getNextHeading, getNextSize } from '../lib/headings'
+import { type HeadingTitles, type TextSizes, getNextHeading } from '../lib/headings'
 
 import { Card } from '../core/card'
 import { Heading } from '../core/heading'
 
 interface PageCardProps extends Omit<Card.RootProps, 'page'> {
-  page: BasePage
+  page: Page
   heading?: HeadingTitles
   size?: TextSizes
 }
@@ -17,12 +17,13 @@ interface PageCardProps extends Omit<Card.RootProps, 'page'> {
 export const PageCard = ({ page, heading = 'h2', size = '5xl', ...props }: PageCardProps) => {
   const subHeading = getNextHeading(heading)
 
-  const { title, slug, excerpt } = page
+  const { title, permalink, slug, excerpt } = page
+
   return (
     <Card.Root {...props}>
       <Card.Title asChild>
         <Heading as={heading} mb="6" p="3" textStyle={size}>
-          <Link href={`/blog/${slug}` as Route}>{title}</Link>
+          <Link href={permalink as Route}>{title}</Link>
         </Heading>
       </Card.Title>
       <Card.Body>{excerpt}</Card.Body>

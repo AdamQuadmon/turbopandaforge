@@ -3,7 +3,7 @@
 import LocaleSelect, { type LocaleOption } from '@turbopandaforge/ui/interaction/locale-select'
 
 import type { ListCollection } from '@ark-ui/react/select'
-import type { Locale } from '~/config/routing'
+import type { Locale } from '~/config/locale'
 
 type Props = {
   locale: string

@@ -3,6 +3,8 @@
  */
 export const isProduction = process.env.NODE_ENV === 'production'
 
+export const isProductionOrDebug = isProduction || process.env.DEBUG_VELITE === 'true'
+
 /**
  * Retrieves the current environment the application is running in.
  */

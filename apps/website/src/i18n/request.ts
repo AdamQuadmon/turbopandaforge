@@ -1,9 +1,7 @@
 import { getRequestConfig } from 'next-intl/server'
-import { defaultLocale } from '~/config/routing'
+import { locale } from '../config/locale'
 
 const config: ReturnType<typeof getRequestConfig> = getRequestConfig(async () => {
-  const locale = defaultLocale
-
   return {
     locale,
     messages: (

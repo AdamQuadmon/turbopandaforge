@@ -1,8 +1,6 @@
 import type { AppConfig } from '@turbopandaforge/types/config/app'
 
 export const defaultConfig: AppConfig = {
-  devUrl: 'http://localhost:3002',
-  siteUrl: 'mugencraft.com',
   nextjs: {
     poweredByHeader: false,
     async headers() {
@@ -42,8 +40,6 @@ export const defaultConfig: AppConfig = {
     },
   },
   imageGenerator: {},
-  navigation: {},
   ui: {},
   seo: {},
-  siteMetadata: {},
 }

@@ -7,6 +7,10 @@
       "types": "./src/core/*.tsx",
       "default": "./src/core/*.tsx"
     },
+    "./images/*": {
+      "types": "./src/images/*.tsx",
+      "default": "./src/images/*.tsx"
+    },
     "./interaction/*": {
       "types": "./src/interaction/*.tsx",
       "default": "./src/interaction/*.tsx"
@@ -24,20 +28,21 @@
     "clean": "git clean -xdf .turbo node_modules"
   },
   "devDependencies": {
-    "@ark-ui/react": "4.1.0",
-    "@icons-pack/react-simple-icons": "^10.0.0",
-    "@shikijs/transformers": "^1.21.0",
-    "@theme-toggles/react": "^4.1.0",
+    "@ark-ui/react": "4.1.2",
+    "@icons-pack/react-simple-icons": "10.0.0",
+    "@shikijs/transformers": "1.22.0",
+    "@theme-toggles/react": "4.1.0",
     "@turbopandaforge/styled-system": "workspace:*",
     "@turbopandaforge/tsconfig": "workspace:*",
     "@turbopandaforge/types": "workspace:*",
-    "@uidotdev/usehooks": "^2.4.1",
-    "lucide-react": "^0.447.0",
-    "next": "14.2.14",
+    "@uidotdev/usehooks": "2.4.1",
+    "date-fns": "4.1.0",
+    "lucide-react": "0.453.0",
+    "next": "14.2.15",
     "react": "18.3.1",
-    "react-hook-form": "^7.53.0",
-    "ts-pattern": "^5.4.0",
-    "usehooks-ts": "^3.1.0"
+    "react-hook-form": "7.53.0",
+    "ts-pattern": "5.5.0",
+    "usehooks-ts": "3.1.0"
   },
   "publishConfig": {
     "access": "public"

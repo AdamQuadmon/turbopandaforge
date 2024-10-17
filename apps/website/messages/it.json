@@ -3,10 +3,6 @@
     "description": "<p>Siamo spiacenti, a volte succede.</p><p>Prova a <retry>ricaricare la pagina</retry>.</p>",
     "title": "Ops! Qualcosa è andato storto!"
   },
-  "HomePage": {
-    "description": "Questo è un semplice esempio di <code>next-intl</code> con Next.js App Router. Prova a cambiare la lingua nel riquadro in alto a destra.",
-    "title": "🇮🇹 Next.Js con Panda+Velite+NextIntl"
-  },
   "LocaleLayout": {
     "title": "🇮🇹 esempio next-intl"
   },
@@ -14,44 +10,8 @@
     "label": "Cambia Lingua",
     "locale": "{locale, select, it {🇮🇹 Italiano} en {🌐 English} other {Unknown}}"
   },
-  "Manifest": {
-    "name": "TurboPandaForge 🇮🇹 i18n"
-  },
-  "Navigation": {
-    "home": "Home",
-    "about": "Chi siamo",
-    "blog": "Blog",
-    "doc": "Guida"
-  },
   "NotFoundPage": {
     "description": "Ricontrolla l'indirizzo o prova un'altra strada.",
     "title": "Pagina non trovata"
-  },
-  "PageLayout": {
-    "links": {
-      "docs": {
-        "description": "Scopri di più su next-intl nella guida ufficiale.",
-        "href": "https://next-intl-docs.vercel.app/",
-        "title": "Guida"
-      },
-      "source": {
-        "description": "Naviga nel codice sorgente di questo esempio su GitHub.",
-        "href": "https://github.com/mugencraft/turbopandaforge",
-        "title": "Source code"
-      }
-    }
-  },
-  "AboutPage": {
-    "description": "<p>Anche le rotte sono tradotte.</p><p>Usando la lingua Italiana, nella barra del'indirizzo di questa pagina web vedrai <code>/it/chi-siamo</code>.</p><p>Se cambi la lingua a English, l'URL verrà tradotto di conseguenza  (<code>/about</code>).</p>",
-    "title": "Chi Siamo"
-  },
-  "BlogPage": {
-    "title": "Blog"
-  },
-  "CategoriesPage": {
-    "title": "Categorie"
-  },
-  "TagsPage": {
-    "title": "Tag"
   }
 }

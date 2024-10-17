@@ -77,5 +77,10 @@ const VALIDATOR = {
       fields: ['urlImports'],
       message: 'Modifying it could expose your application to vulnerabilities.',
     },
+    EXPORT: {
+      fields: ['output'],
+      values: ['export'],
+      message: 'With output set to `export` Security Headers are not included.',
+    },
   },
 }

@@ -1,19 +1,28 @@
-import { Box, Container } from '@turbopandaforge/styled-system/jsx'
-import { background } from '@turbopandaforge/styled-system/recipes'
 import { PageCards } from '@turbopandaforge/ui/page/cards'
 
-import { useTranslations } from 'next-intl'
+import type { Metadata } from 'next'
 
-import { getCategories } from '~/lib/content'
+import { SEOPage } from '~/components/page'
+import { createMetadata, getCategories, getPageBySlug } from '~/lib/content'
+
+export const generateMetadata = (): Metadata => {
+  const { title, description } = getPageBySlug('category') || createMetadata('category')
+
+  return {
+    title,
+    description,
+  }
+}
 
 export default function CategoriesPage() {
-  const t = useTranslations('CategoriesPage')
+  const page = getPageBySlug('category') || createMetadata('category')
+  const { title } = page
+
   const categories = getCategories()
 
   return (
-    <Container>
-      <Box className={background({ visual: 'radiant' })} />
-      <PageCards {...{ pages: categories, title: t('title'), heading: 'h1' }} />
-    </Container>
+    <SEOPage page={page}>
+      <PageCards {...{ pages: categories, title, heading: 'h1' }} />
+    </SEOPage>
   )
 }

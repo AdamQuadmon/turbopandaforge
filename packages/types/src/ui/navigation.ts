@@ -1,17 +1,16 @@
 import type { ButtonVariantProps } from '@turbopandaforge/styled-system/recipes'
 import type { PropsWithChildren, ReactElement, ReactNode } from 'react'
 
-// TODO: maybe is better to be generic and only state the available slots
 export interface NavbarFullProps {
   navbarTop: NavbarTopProps
   navbarMain: NavbarProps
-  navBottom: ReactNode
+  navBottom?: ReactNode
 }
 
 export interface NavbarTopProps {
-  left: ReactNode
-  center: ReactNode
-  right: ReactNode
+  left?: ReactNode
+  center?: ReactNode
+  right?: ReactNode
 }
 
 export interface NavbarProps {

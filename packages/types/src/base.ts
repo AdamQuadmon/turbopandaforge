@@ -1,18 +1,15 @@
 /**
- * Contact info
- */
-export interface Contacts {
-  address?: string
-  date?: string
-  email?: string
-  telephone?: string
-  url?: string
-}
-
-/**
  * Social links
  */
-export interface Socials {
+export interface VerificationCodes {
+  google?: string
+  yahoo?: string
+  yandex?: string
+  me?: string
+}
+
+export interface Contacts {
+  email?: string
   facebook?: string
   github?: string
   instagram?: string
@@ -21,9 +18,19 @@ export interface Socials {
   twitter?: string
   wikipedia?: string
   youtube?: string
+  phone?: string
 }
 
-export interface Person {
+export interface BasePerson {
+  name: string
+  url: string
+}
+
+export interface Author extends BasePerson {
+  slug: string
+}
+
+export interface Person extends BasePerson {
   contacts: Contacts
   identity: PersonIdentity
   nicknames?: string[]

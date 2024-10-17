@@ -1,5 +1,5 @@
 import { useLocale, useTranslations } from 'next-intl'
-import { locales } from '~/config/routing'
+import { locales } from '~/config/locale'
 import LocaleSwitcherSelect from './locale-switcher-select'
 
 /**

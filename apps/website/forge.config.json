@@ -1,14 +1,11 @@
 {
-  "siteUrl": "https://forge.mugencraft.com",
   "nextjs": {
     "transpilePackages": [
       "@turbopandaforge/configs",
       "@turbopandaforge/contentlayer",
-      "@turbopandaforge/nextjs",
+      "@turbopandaforge/types",
+      "@turbopandaforge/utils",
       "@turbopandaforge/ui"
     ]
-  },
-  "navigation": {
-    "sitemapPaths": ["about", "posts"]
   }
 }

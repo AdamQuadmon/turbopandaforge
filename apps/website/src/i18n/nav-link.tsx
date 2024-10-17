@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import type { ComponentProps } from 'react'
 
-// TODO: implement
 export function NavLink({ href, ...rest }: ComponentProps<typeof Link>) {
   const selectedLayoutSegment = useSelectedLayoutSegment()
   const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : '/'

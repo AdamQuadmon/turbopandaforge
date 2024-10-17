@@ -18,7 +18,6 @@ export const getAppConfig = async (overrides?: Partial<AppConfig>): Promise<AppC
 
   const resolvedConfig = await resolveAppConfig(config)
 
-  // TODO: validate config
   consola.success(
     'Loaded Config',
     //resolvedConfig

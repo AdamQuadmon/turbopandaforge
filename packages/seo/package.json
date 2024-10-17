@@ -1,0 +1,27 @@
+{
+  "name": "@turbopandaforge/seo",
+  "version": "0.1.0",
+  "description": "A package for managing seo in Next.js projects.",
+  "exports": {
+    "./generators/*": {
+      "types": "./src/generators/*.ts",
+      "default": "./src/generators/*.ts"
+    },
+    "./metadata/*": {
+      "types": "./src/metadata/*.ts",
+      "default": "./src/metadata/*.ts"
+    },
+    "./schema/*": {
+      "types": "./src/schema/*.ts",
+      "default": "./src/schema/*.ts"
+    },
+    "./ui/*": {
+      "types": "./src/ui/*.tsx",
+      "default": "./src/ui/*.tsx"
+    }
+  },
+  "dependencies": {
+    "@turbopandaforge/types": "workspace:*",
+    "@turbopandaforge/tsconfig": "workspace:*"
+  }
+}

@@ -9,21 +9,21 @@ import { UserButtons } from '@turbopandaforge/ui/interaction/user-buttons'
 import { BellPlus, Component, HeartHandshake, Rss, Shell, Tag } from 'lucide-react'
 import type { Route } from 'next'
 
+import { Logo } from '~/components/logo'
 import { LocaleSwitcher } from '~/i18n/locale-switcher'
 import { NavLink } from '~/i18n/nav-link'
 import { getCategoryLinks, getLatestPostLinks, getTagLinks } from '~/lib/content'
-import { Logo } from '~/logo'
 
-const categories = getCategoryLinks()
-const tags = getTagLinks()
-const posts = getLatestPostLinks()
+const categoryLinks = getCategoryLinks()
+const tagLinks = getTagLinks()
+const postLinks = getLatestPostLinks()
 
 const categoriesItems: NavItemProps = {
   title: 'Categories',
   path: '/category',
   icon: <Component size={68} />,
   direction: 'row',
-  items: categories,
+  items: categoryLinks,
 }
 
 const tagsItems: NavItemProps = {
@@ -31,20 +31,20 @@ const tagsItems: NavItemProps = {
   path: '/tag',
   direction: 'row',
   icon: <Tag size={68} />,
-  items: tags,
+  items: tagLinks,
 }
 
 const latestItems: NavItemProps = {
   title: 'Latest',
   direction: 'column',
   icon: <Rss size={68} />,
-  items: posts,
+  items: postLinks,
 }
 
 export const navPrimary: NavItemProps[] = [
   {
     title: 'About',
-    path: '/about',
+    path: '/about-us',
   },
   {
     title: 'Blog',
@@ -52,8 +52,8 @@ export const navPrimary: NavItemProps[] = [
     items: [categoriesItems, tagsItems, latestItems],
   },
   {
-    title: 'Docs',
-    path: '/docs',
+    title: 'Roadmap',
+    path: '/blog/roadmap',
   },
 ]
 export const navSecondary: NavItemProps[] = [
@@ -88,7 +88,7 @@ export const navbar: NavbarFullProps = {
     center: 'FOLLOW NOW!',
     right: <LocaleSwitcher />,
   },
-  navBottom: categories.map(({ title, path }, k) => (
+  navBottom: categoryLinks.map(({ title, path }, k) => (
     <NavLink href={path as Route} key={k}>
       <Badge variant="subtle">{title}</Badge>
     </NavLink>

@@ -1,3 +1,5 @@
-import { config } from '@turbopandaforge/contentlayer/velite/config'
+import { getConfig } from '@turbopandaforge/contentlayer/velite/config'
+
+const config = getConfig(process.env.LOCALE || 'en')
 
 export default config

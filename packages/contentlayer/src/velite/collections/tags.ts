@@ -1,16 +1,17 @@
 import { defineCollection, s } from 'velite'
 import { count } from '../validators/count'
+import { metadataCommon } from './metadata'
+
+const { tags: _tags, author, keywords, ...tagsMetadata } = metadataCommon
 
 export const tags = defineCollection({
   name: 'Tag',
   pattern: 'tags/index.yml',
   schema: s
     .object({
-      name: s.string().max(20),
-      slug: s.slug('global', ['admin', 'login']),
-      cover: s.image().optional(),
-      description: s.string().max(999).optional(),
+      path: s.slug('tags'),
       count,
+      ...tagsMetadata,
     })
-    .transform((data) => ({ ...data, permalink: `/${data.slug}` })),
+    .transform((data) => ({ ...data, permalink: '', slug: '', type: 'tags' })),
 })

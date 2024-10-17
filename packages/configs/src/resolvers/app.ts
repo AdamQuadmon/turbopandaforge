@@ -12,7 +12,9 @@ export async function resolveAppConfig(appConfig: AppConfig): Promise<AppConfig>
 
   const nextjsWithHeaders: NextConfig = {
     ...resolveEnvBasedConfig(),
-    headers: () => Promise.resolve(resolveNextHeaders(appConfig)),
+    ...(userNextjs.output !== 'export' && {
+      headers: () => Promise.resolve(resolveNextHeaders(appConfig)),
+    }),
     ...resolveUserDefinedOptions(userNextjs),
   }
 

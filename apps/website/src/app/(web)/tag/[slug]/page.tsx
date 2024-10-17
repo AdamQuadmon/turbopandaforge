@@ -1,30 +1,33 @@
-import { Container } from '@turbopandaforge/styled-system/jsx'
 import type { PropsWithSlug } from '@turbopandaforge/types/ui/base'
 import { PageCards } from '@turbopandaforge/ui/page/cards'
 
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import { SEOPage } from '~/components/page'
 import { getPostByTag, getTagBySlug, getTags } from '~/lib/content'
 
 export function generateMetadata({ params: { slug } }: PropsWithSlug): Metadata {
   const tag = getTagBySlug(slug)
-  if (tag == null) return {}
-  return { title: tag.name }
+  if (tag == null) notFound()
+  const { title, description } = tag
+  return { title, description }
 }
 
 export function generateStaticParams() {
-  return getTags().map((tag) => ({ slug: tag.slug }))
+  return getTags().map(({ slug }) => ({ slug }))
 }
 
 export default function TagPage({ params: { slug } }: PropsWithSlug) {
   const tag = getTagBySlug(slug)
   if (tag == null) notFound()
-  const posts = getPostByTag(tag.name)
+  const { title } = tag
+
+  const posts = getPostByTag(tag.slug)
 
   return (
-    <Container>
-      <PageCards {...{ pages: posts, title: tag.name, heading: 'h1' }} />
-    </Container>
+    <SEOPage page={tag}>
+      <PageCards {...{ pages: posts, title, heading: 'h1' }} />
+    </SEOPage>
   )
 }

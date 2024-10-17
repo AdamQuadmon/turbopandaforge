@@ -1,47 +1,45 @@
-/**
- * Base Page
- */
-export interface BasePage {
-  slug: string
-  title: string
-  articleType?: string
-  excerpt?: string
-  date?: string
-  lastMod?: string
-}
+import type { ArticleType } from '../seo/article'
+import type { PageType } from '../seo/page'
 
 /**
- * Extends RawFrontmatterMetadata with additional computed and optional fields.
- * `date`: The publish date as a string
- * `images`: Optional image metadata
- * `readingTime`: Reading time, computed based on `_raw_content`
- * `slug`: Slug, computed based on `url_path` and RawFrontmatterMetadata
- * `tags`: An array of string tags
- * `title`: The title of the page or article computed on file_path
- * `wordCount`: Word count, computed based on `_raw_content`
+ * Base Metadata enabled Page reflecting Velite Collections such as Page, Post, Category, Tag
  */
-export interface PageMetadata {
-  slug: string
-  title: string
-  path: string
-  articleType?: string
-  excerpt?: string
+export interface Page {
+  authors: string[]
+  category: string
+  code: string
+  content: string
   date?: string
-  lastMod?: string
-  images?: string | string[]
-  tags: string[]
-  wordCount: number
-  authors?: string | string[]
-  bibliography?: string
-  canonicalUrl?: string
   description?: string
-  draft?: boolean
-  language?: string
-  layout?: string
+  featured?: boolean
+  images?: string[]
+  lastMod: string
+  locale: string
+  keywords: string[]
+  name?: string
   mainEntity?: string
-  pageType?: string
-  twitterCard?: string | string[]
+  pageType?: PageType
+  path: string
+  permalink: string
+  priority: string
+  slug: string
+  status?: string
+  tags: string[]
+  title: string
+  type: string
+}
+
+export interface PostPage extends Page {
+  articleType?: ArticleType
+  metadata: {
+    readingTime: number
+    wordCount: number
+  }
+  excerpt: string
   toc?: TocEntry[]
+}
+export interface CategoryPage extends Page {
+  children?: []
 }
 
 export interface TocEntry {

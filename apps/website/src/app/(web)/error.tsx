@@ -5,6 +5,7 @@ import { background } from '@turbopandaforge/styled-system/recipes'
 import { Button } from '@turbopandaforge/ui/core/button'
 import { Heading } from '@turbopandaforge/ui/core/heading'
 import { Text } from '@turbopandaforge/ui/core/text'
+
 import { useTranslations } from 'next-intl'
 import { useEffect } from 'react'
 

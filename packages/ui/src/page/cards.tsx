@@ -1,4 +1,4 @@
-import type { BasePage } from '@turbopandaforge/types/content/pages'
+import type { Page } from '@turbopandaforge/types/content/pages'
 
 import {
   type HeadingTitles,
@@ -12,13 +12,12 @@ import { Heading } from '../core/heading'
 import { PageCard } from './card'
 
 interface PageCardsProps {
-  pages: BasePage[]
+  pages: Page[]
   title: string
   heading?: HeadingTitles
   size?: TextSizes
 }
 
-// TODO add recipe
 export const PageCards = ({ pages, title, heading = 'h1', size = '6xl' }: PageCardsProps) => {
   const subHeading = getNextHeading(heading)
   const subSize = getNextHalfSize(size)

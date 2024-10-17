@@ -1,0 +1,39 @@
+locale: en
+metadata: 
+  name: TurboPandaForge
+  title: TurboPandaForge Next.js with Velite and PandaCSS
+  titleTemplate: "%s | TurboPandaForge"
+  description: Forge PandaCSS based Web Apps. Features Next.js with Velite example.
+  keywords:
+    - bun
+    - turbo
+    - pandacss
+    - nextjs
+  authors:
+    - name: Luciano Amodio
+      email: email@example.com
+      url: https://example.com
+contacts: 
+    email: email@example.com,
+    facebook: https://facebook.com,
+    github: https://github.com/mugencraft
+    linkedin: https://www.linkedin.com,
+    mastodon: https://mastodon.social/@mastodonuser,
+    twitter: https://twitter.com/Twitter,
+    youtube: https://youtube.com
+navigation:
+  - text: HOME
+    link: /
+  - text: Blog
+    link: /blog
+footer:
+  - text: About
+    link: /about
+  - text: Contact
+    link: /contact
+legals:
+  - text: Privacy Policy
+    link: /privacy-policy
+  - text: Terms of Service
+    link: /terms-of-service
+

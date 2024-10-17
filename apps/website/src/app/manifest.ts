@@ -1,13 +1,14 @@
 import type { MetadataRoute } from 'next'
-import { getTranslations } from 'next-intl/server'
-import { defaultLocale } from '~/config/routing'
+import { getOptions } from '~/lib/content'
 
 export default async function manifest(): Promise<MetadataRoute.Manifest> {
-  const locale = defaultLocale
-  const t = await getTranslations({ locale, namespace: 'Manifest' })
+  const {
+    metadata: { description, name },
+  } = getOptions()
 
   return {
-    name: t('name'),
+    name,
+    description,
     start_url: '/',
     theme_color: '#101E33',
   }

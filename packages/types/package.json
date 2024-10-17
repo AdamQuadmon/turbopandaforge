@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Type definitions for Turbopanda Forge projects",
   "exports": {
+    "./base": {
+      "types": "./src/base.ts",
+      "default": "./src/base.ts"
+    },
     "./config/*": {
       "types": "./src/config/*.ts",
       "default": "./src/config/*.ts"
@@ -24,11 +28,15 @@
       "default": "./src/utils/*.ts"
     }
   },
+  "scripts": {
+    "clean": "git clean -xdf .turbo node_modules"
+  },
   "devDependencies": {
     "@turbopandaforge/tsconfig": "workspace:*",
     "@turbopandaforge/styled-system": "workspace:*",
-    "@types/node": "22.7.4",
-    "@types/react": "18.3.10"
+    "@types/node": "22.7.6",
+    "@types/react": "18.3.11",
+    "next": "14.2.15"
   },
   "publishConfig": {
     "access": "public"

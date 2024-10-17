@@ -2,7 +2,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 const slots = ['root', 'content', 'closeButton', 'closeIcon']
 
-// TODO: verify and document this, it assumes there are banner-hidden and .sidebar-container
 export const banner = defineSlotRecipe({
   base: {
     closeButton: {

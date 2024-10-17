@@ -1,8 +1,8 @@
-import type { BasePage } from '@turbopandaforge/types/content/pages'
+import type { Page } from '@turbopandaforge/types/content/pages'
 import { format, parseISO } from 'date-fns'
 
 interface PageDateProps {
-  page: BasePage
+  page: Page
 }
 export const PageDate = ({ page }: PageDateProps) => {
   const { date } = page

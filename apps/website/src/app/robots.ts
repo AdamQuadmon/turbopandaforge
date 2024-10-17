@@ -1,6 +1,7 @@
-import { generateRobots } from '@turbopandaforge/nextjs/generators/robots'
+import { generateRobots } from '@turbopandaforge/seo/generators/robots'
+import { siteUrl } from '~/config/routing'
+import { robotsDisallowed } from '~/config/routing'
 
 export default async function robots() {
-  // TODO: implement
-  return generateRobots('')
+  return generateRobots(siteUrl, robotsDisallowed)
 }
